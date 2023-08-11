@@ -3,14 +3,16 @@ import { CarProps } from "@types";
 import { useState } from "react";
 import Image from "next/image";
 import { calculateCarRent } from "@utils";
+import CustomButton from "./CustomButton";
 
 interface CarCardProps {
   car: CarProps;
 }
 
 const CarCard = ({ car }: CarCardProps) => {
-  const { city_mpg, make, model, transmission, displacement, drive, year } =
-    car;
+  const { city_mpg, make, model, transmission, displacement, drive, year } = car;
+
+  const [isOpen, setIsOpen] = useState(false)
 
   const carRent = calculateCarRent(year, city_mpg);
 
@@ -69,7 +71,15 @@ const CarCard = ({ car }: CarCardProps) => {
           </div>
         </div>
 
-        
+        <div className="car-card__btn-container">
+          <CustomButton
+            title="View More"
+            containerStyles="w-full py-[16px] rounded-full bg-primary-blue"
+            textStyles="text-white text-[14px] leading-[17px] font-bold"
+            rightIcon='/right-arrow.svg'
+            handleClick={() => setIsOpen(true)}
+          />
+        </div>
       </div>
     </div>
   );
