@@ -22,5 +22,4 @@ MyWay CarHub is designed to provide a user-friendly interface for users to:
 - Compare up to three cars side by side.
 - Responsive design for mobile and desktop.
 
-## DEMO
-  [MyWay](https://myway-carhub.vercel.app/)
+## [DEMO](https://myway-carhub.vercel.app/)
